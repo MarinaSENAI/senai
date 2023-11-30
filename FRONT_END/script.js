@@ -25,40 +25,19 @@ let input_tempo_exib = document.getElementById("tempo")
 
 btn_cadastro.addEventListener("click", async () => {
 
-    let todas_infs = {
-        nome: input_nome.value,
-        tipo: input_tipo.value,
-        situacao: input_situacao.value,
-        data_inicial: input_data_inicial.value,
-        data_final: input_data_final.value,
-        end_img: input_end_img.value,
-        tempo_exib: input_tempo_exib.value,
-    }
-
-    cadastros.push(todas_infs)
-    let local = JSON.stringify(cadastros)
-    localStorage.setItem("todas_infs", local)
-
-    let dados = await fetch("http://localhost:3003/midia", {
+    let dados = await fetch("http://localhost:3003/api/midia", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(todas_infs),
+        body: JSON.stringify({nome: input_nome,  
+        tipo: input_tipo,status: input_situacao,
+        data_inicial: input_data_inicial,data_final: input_data_final,end_img: input_end_img,
+        tempo_exib: input_tempo_exib,}),
     })
-
-    input_nome.value = ""
-    input_tipo.value = "Foto"
-    input_situacao.value = "Ativo"
-    input_data_inicial.value = ""
-    input_data_final.value = ""
-    input_end_img.value = ""
-    input_tempo_exib.value = ""
-
-
+    if(dados.ok) {
     btn_tela_listar.click()
-
-})
+}})
 
 btn_limpar.addEventListener("click", async ()=> {
     
@@ -77,22 +56,18 @@ btn_tela_listar.addEventListener("click", async ()=> {
         let listagem = ""
         let cadastro = await resposta.json()
         for(const f of cadastro) {
-            let status = ""
+            let Status = ""
             if (f.status == "A") {
-                status = "ATIVADO"
+                Status = "ATIVADO"
             } else {
-                status = "DESATIVADO"               
+                Status = "DESATIVADO"               
             }
             listagem +=
                 `<tr>
                             <th scope="row"></th>
-                            <td>
-                            <img src=""> ${f.img}
-                                <button><i class
-                                0="bi b-images"></i></button> ${f.nome}
-                                </td>
-                                <td>${f.tempo_exib}</td>
-                                <td>${status}</td>
+                                <td>${f.nome}</td>
+                                <td>${f.tempo}</td>
+                                <td>${f.status}</td>
                                 <td><button id="bt_edit"><i class="bi bi-pencil" onclick="edt(${f.id})"></i></button>
                                 <button id="bt_edit"><i class ="bi bi-trash"onclick="excluir(${f.id})"></i></button>
                                 </td>

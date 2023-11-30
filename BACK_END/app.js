@@ -11,9 +11,6 @@ app.use(cors())
 app.use(bodyParser.json())
 
 const port = 3003
-
-
-
 app.listen(port, () => {
     console.log(`Rodando em http://localhost:${port}`)
 })
@@ -28,19 +25,19 @@ const pool = mysql.createPool({
     queueLimit: 0
 })
 
-app.post('/midia', async (req, res) => {
+app.post('/api/midia', async (req, res) => {
     try {
+        const conexao = await pool.getConnection()
         console.log(req.body)
         const {nome, tipo, situacao, data_inicial, data_final, end_img, tempo_exib} = req.body
-        const conexao = await pool.getConnection()
-        const sql = `INSERT INTO midia (nome, tipo, status, data_inicio, data_fim, url, tempo) VALUE ("${nome}", "${tipo}", "${situacao}", "${data_inicial}", "${data_final}", "${end_img}", "${tempo_exib}")`
+        const sql = `INSERT INTO midia (nome, tipo, status, data_inicio, data_fim, url, tempo) VALUE (" "${nome}", "${tipo}", "${situacao}", "${data_inicial}", "${data_final}", "${end_img}", "${tempo_exib}" ")`
         
         
         const [linhas] = await conexao.execute(sql)
         
 
         conexao.release()
-        res.json(linhas)
+        res.json({msg: "Registrado!"})
     
     
     } catch (error) {

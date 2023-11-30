@@ -1,5 +1,7 @@
-# ProjetoMidiaIndoor
- Grupo: Samuel, Maria Luiza, Manuela Brambila, Ana Clara
+#projeto Ana e Marina
+nosso projeto é um midia Indoor,que faz um carrossel com as imagens lincadas 
 
-# Nosso Projeto
-- Fizemos uma pagina de Cadastro para que qualquer pessoa coloque sues dados de suas propagandas como nome da imagem tipo de imagem (foto, video) tempo de duração da foto ou video, neste site o usuario pode colocar sua propaganda em forma de video ou imagem para que seja trasmitido para um painel de midia indoor
+
+#integrantes
+-Ana Laura de Almeida 
+-Marina Luiza de Oliveira Silva 
