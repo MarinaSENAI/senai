@@ -1,0 +1,29 @@
+{
+  "name": "projetomidiaindoor",
+  "version": "1.0.0",
+  "description": "Grupo: Samuel, Maria Luiza, Manuela Brambila, Ana Clara",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1Muel/ProjetoMidiaIndoor.git"
+  },
+  "author": "ANA LARA, MARINA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1Muel/ProjetoMidiaIndoor/issues"
+  },
+  "homepage": "https://github.com/1Muel/ProjetoMidiaIndoor#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5"
+  },
+  "keywords": []
+}

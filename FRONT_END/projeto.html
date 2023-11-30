@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <title> Midia Indoor </title>
+</head>
+<style>
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .menu-buttons {
+    margin-bottom: 20px;
+  }
+
+  .content {
+    display: none;
+    margin-top: 20px;
+  }
+
+  /* *{
+        border: solid black 1px;
+    } */
+</style>
+
+<body>
+  <h1 class="text-center mt-5">Olá, seja bem vindo!!</h1>
+  <div class="container">
+    <div class="menu-buttons ">
+      <button id="btn_tela_cadastrar" class="btn btn-success" onclick="mostrarDiv('cadastro')">CADASTRAR</button>
+      <button id="btn_tela_listar" class="btn btn-success" onclick="mostrarDiv('listar')">LISTAGEM</button>
+      <button id="btn_tela_atualizar" class="btn btn-success" onclick="mostrarDiv('atualizar')">
+        ATUALIZAÇÃO</button>
+    </div>
+  </div>
+
+  <!-- TELA DE CADASTRO -->
+  <div class="content" id="cadastro">
+    <div class="rounded-4 col-5 p-3 mt-5 mx-auto shadow">
+      <h1 class="text-center">CADASTRAR</h1>
+
+      <div class="form-control mb-4 border-white">
+        <label class="col-12 text-center" for=""><strong>Imagem</strong></label>
+        <input class="form-control" type="img" id="end_img" placeholder="Link da Imagem">
+       
+      </div>
+
+      <div class="form-control mb-4 border-white">
+        <label class="col-12 text-center" for=""><strong>escolha um nome!</strong></label>
+        <input class="form-control" type="text" id="titulo" placeholder="Titulo da Imagem">
+      </div>
+
+      <div class="form-control mb-4 border-white">
+        <label class="col-12 text-center" for=""><strong>status</strong></label>
+        <select id="tipo" class="form-select" aria-label="Default select example">
+          <option selected>Escolha uma opção</option>
+          <option value="1">Video</option>
+          <option value="2">Foto</option>
+        </select>
+      </div>
+
+      <div class="form-control mb-4 border-white">
+        <label class="text-center col-12" for=""><strong>como sua mídia está?</strong></label>
+        <select id="situacao" class="form-select" aria-label="Default select example">
+          <option selected>Escolha uma opção</option>
+          <option value="1">Ativado</option>
+          <option value="2">Desativo</option>
+        </select>
+      </div>
+
+      <div class="form-control mb-4 border-white">
+        <label class="col-12 text-center" for=""><strong>data inicial</strong></label>
+        <input class="form-control" id="data_comeco" type="date">
+      </div>
+
+      <div class="form-control mb-4 border-white">
+        <label class="col-12 text-center" for=""><strong>data final</strong></label>
+        <input class="form-control" id="data_termino" type="date">
+      </div>
+
+      <div class="form-control mb-4 border-white">
+        <label class="col-12 text-center" for=""><strong>Tempo</strong></label>
+        <input class="form-control" id="tempo" type="number">
+      </div>
+
+      <div class="form-control text-center border-white">
+        <button id="btn_cadastro" class="btn btn-success mt-2"><strong>CADASTRO</strong></button>
+        <button id="btn_limpar" class="btn btn-danger mt-2"><strong>LIMPAR</strong></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TELA DE LISTAGEM -->
+  <div class="content " id="listar">
+    <div class="rounded-4 col-9 p-3 mt-5 mx-auto shadow">
+      <h1 class="text-center">LISTAGEM DE MIDIA</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome Mídia</th>
+            <th scope="col">Tempo (ms)</th>
+            <th scope="col">Status</th>
+            <th scope="col">Ação</th>
+          </tr>
+        </thead>
+        <tbody id="listar_adicionar">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TELA PARA ATUALIZAR -->
+  <div class="content rounded-4 col-5 p-3 mt-5 mx-auto shadow" id="atualizar">
+    <h1 class="text-center">ATUALIZAR</h1>
+
+    <div class="form-control border-white">
+      <label class="col-12 text-center" for=""><strong>Imagem</strong></label>
+      <input class="form-control" type="img" id="end_img_editado" placeholder="Link da Imagem">
+    </div>
+
+    <div class="form-control border-white">
+      <label class="col-12 text-center" for=""><strong>Nome da propaganda</strong></label>
+      <input class="form-control" type="text" id="titulo_editado" placeholder="Titulo da Imagem">
+    </div>
+
+    <div class="form-control border-white">
+      <label class="col-12 text-center" for=""><strong>Status</strong></label>
+      <select id="status_editado" class="form-select" aria-label="Default select example">
+        <option selected>Escolha uma opção</option>
+        <option value="1">Foto</option>
+        <option value="2">Video</option>
+      </select>
+    </div>
+
+    <div class="form-control mb-4 border-white">
+      <label class="text-center col-12" for=""><strong>Situação da Midia</strong></label>
+      <select id="situacao_editado" class="form-select" aria-label="Default select example">
+        <option selected>Escolha uma opção</option>
+        <option value="1">Ativado</option>
+        <option value="2">Desativo</option>
+      </select>
+    </div>
+
+    <div class="form-control border-white">
+      <div class="form-control">
+        <input type="text" class="form-control" id="id_editado">
+      </div>
+      <label class="col-12 text-center" for=""><strong>Primeira data</strong></label>
+      <input class="form-control" id="data_começo_editado" type="date">
+    </div>
+
+    <div class="form-control border-white">
+      <label class="col-12 text-center" for=""><strong>Ultima data</strong></label>
+      <input class="form-control" id="data_termino_editado" type="date">
+    </div>
+
+    <div class="form-control border-white">
+      <label class="col-12 text-center" for=""><strong>Tempo</strong></label>
+      <input class="form-control" id="tempo_editado" type="number">
+    </div>
+
+    <div class="form-control text-center border-white">
+      <button id="btn_atualizar_dados" class="btn btn-success mt-2"><strong>ATUALIZAR</strong></button>
+    </div>
+  </div>
+</body>
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+  function mostrarDiv(id) {
+    // Esconde todas as DIVs
+    document.querySelectorAll('.content').forEach(div => {
+      div.style.display = 'none';
+    });
+    // Mostra apenas a DIV com o ID correspondente
+    document.getElementById(id).style.display = 'block';
+  }
+</script>
+
+</html>
