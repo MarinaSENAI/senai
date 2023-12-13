@@ -1,7 +1,7 @@
 {
   "name": "projetomidiaindoor",
   "version": "1.0.0",
-  "description": "Grupo: Samuel, Maria Luiza, Manuela Brambila, Ana Clara",
+  "description": "Grupo: Ana Laura de Almeida e Marina Luiza de Oliveira Silva",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,12 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/1Muel/ProjetoMidiaIndoor.git"
   },
-  "author": "ANA LARA, MARINA",
+  "author": "ANA LAURA, MARINA",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/1Muel/ProjetoMidiaIndoor/issues"
+    "url": "https://github.com/MarinaSENAI/senai/edit/main/BACK_END/package.json#L4C18-L4C72s"
   },
-  "homepage": "https://github.com/1Muel/ProjetoMidiaIndoor#readme",
+  "homepage": "https://github.com/MarinaSENAI/senai/edit/main/BACK_END/package.json#L4C18-L4C72",
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
